@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Work With Us</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header><strong>Work With Tech ABM Solutions</strong></header>
+
+<div class="container">
+  <div class="card">
+    <form id="form">
+      <input placeholder="Full Name" required>
+      <input placeholder="Email / Phone" required>
+      <select>
+        <option>Template Designer</option>
+        <option>Graphic Designer</option>
+        <option>Developer</option>
+        <option>Content Writer</option>
+      </select>
+      <textarea placeholder="Tell us about yourself"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="status"></p>
+  </div>
+</div>
+
+<script type="module">
+import { db } from "./js/firebase.js";
+import { addDoc, collection } from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+form.onsubmit = async e => {
+  e.preventDefault();
+  await addDoc(collection(db, "contributors"), {
+    name: form[0].value,
+    contact: form[1].value,
+    role: form[2].value,
+    message: form[3].value,
+    createdAt: new Date()
+  });
+  status.innerText = "Thank you for applying!";
+  form.reset();
+};
+</script>
+
+</body>
+</html>
