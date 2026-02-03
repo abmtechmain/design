@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <span><strong>Admin – Tech ABM Solutions</strong></span>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Admin Login</h2>
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <button id="login">Login</button>
+  </div>
+
+  <div class="card">
+    <h2>Create Poster Template</h2>
+    <input type="file" id="poster">
+    <p>Drag text directly on poster</p>
+    <canvas id="canvas"></canvas>
+    <button id="save">Save Template</button>
+  </div>
+
+</div>
+
+<footer>© Tech ABM Solutions</footer>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>
